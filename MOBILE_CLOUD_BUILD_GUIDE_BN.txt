@@ -1,0 +1,25 @@
+শুধু Android মোবাইল দিয়ে Biswaart Studio APK তৈরি করার নিয়ম
+
+এই ZIP-এ GitHub Actions-এর Cloud Build workflow যোগ করা আছে।
+APK আপনার ফোনে তৈরি হবে না; GitHub-এর cloud runner-এ তৈরি হবে এবং পরে ফোনে ডাউনলোড করবেন।
+
+ধাপ:
+1. Chrome-এ https://github.com খুলে বিনামূল্যে account তৈরি/সাইন ইন করুন।
+2. New repository তৈরি করুন; নাম দিন BiswaartStudioAndroid।
+3. Repository Public রাখলে GitHub Free-তে Actions ব্যবহার সহজ হবে।
+4. ZIP Extract করে ভেতরের Biswaart_Studio_Android_Project ফোল্ডারের সব ফাইল GitHub repository-তে Upload files দিয়ে আপলোড করুন।
+   - .github ফোল্ডারটিও অবশ্যই আপলোড করতে হবে।
+   - app, build.gradle, settings.gradle, gradle.properties ফাইলগুলো repository root-এ থাকতে হবে।
+5. Commit changes চাপুন।
+6. GitHub repository-র Actions tab খুলুন।
+7. "Build Biswaart Studio APK" workflow নির্বাচন করে Run workflow চাপুন।
+8. Build সবুজ (success) হলে workflow run খুলে নিচের Artifacts থেকে Biswaart-Studio-debug-APK ডাউনলোড করুন।
+9. ZIP Extract করে app-debug.apk-তে ট্যাপ করে Install করুন।
+10. Android চাইলে Chrome/Files-এর জন্য "Install unknown apps" অনুমতি দিন।
+
+নোট:
+- GitHub account এবং cloud build চালাতে ইন্টারনেট লাগবে।
+- GitHub-এর বিনামূল্যের usage limit/নীতিমালা প্রযোজ্য।
+- এই APK একটি debug preview build, Play Store release নয়।
+- প্রথম build ব্যর্থ হলে Actions-এর error log পাঠান; সেই অনুযায়ী project ঠিক করতে হবে।
+- এই build-এ এখনো সম্পূর্ণ Picsart-সমমানের AI, advanced photo/video features নেই; এটি প্রাথমিক Android wrapper prototype।
